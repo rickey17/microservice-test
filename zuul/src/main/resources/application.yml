@@ -1,0 +1,15 @@
+server:
+  port: 8040
+spring:
+  application:
+    name: microservice-gateway-zuul
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka:123456@peer1:8761/eureka,http://eureka:123456@peer2:8762/eureka
+    healthcheck:
+      enable: true
+  instance:
+    prefer-ip-address: true
+zuul:
+  sensitive-headers: Cookie,Set-Cookie,Authorization

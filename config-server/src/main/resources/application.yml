@@ -1,0 +1,28 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: microservice-config-server
+  cloud:
+    bus:
+      trace:
+        enabled: true
+    config:
+      server:
+        git:
+          uri: https://github.com/rickey17/microservice-config.git
+          username: rickey17
+          password: 1567xq2348
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka:123456@peer1:8761/eureka,http://eureka:123456@peer2:8762/eureka
+    healthcheck:
+      enable: true
+  instance:
+    prefer-ip-address: true
